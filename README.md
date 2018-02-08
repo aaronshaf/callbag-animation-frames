@@ -1,4 +1,4 @@
-```
+```bash
 yarn add callbag-animation-frames
 ```
 
