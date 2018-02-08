@@ -1,12 +1,12 @@
-const START = 0;
-const DATA = 1;
-const TERMINATE = 2;
+var START = 0;
+var DATA = 1;
+var TERMINATE = 2;
 
-let request;
+var request;
 
-let isActivated = false;
+var isActivated = false;
 
-const listeners = [];
+var listeners = [];
 
 function rafLoop(highResTimeStamp /* DOMHighResTimeStamp */) {
   listeners.forEach(function(listener) {
@@ -29,13 +29,13 @@ function deactivate() {
 function animationFrames(start, sink) {
   if (start !== START) return;
 
-  let listener = function(gamepads) {
+  var listener = function(gamepads) {
     return sink(DATA, gamepads);
   };
 
   listeners.push(listener);
 
-  const talkback = function(type, d) {
+  var talkback = function(type, d) {
     if (type === TERMINATE) {
       listeners.splice(array.indexOf(listener), 1);
       if (listeners.length === 0) {
