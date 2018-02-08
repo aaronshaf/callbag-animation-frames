@@ -9,7 +9,9 @@ let isActivated = false;
 const listeners = [];
 
 function rafLoop(highResTimeStamp /* DOMHighResTimeStamp */) {
-  listeners.forEach(listener => listener(highResTimeStamp));
+  listeners.forEach(function(listener) {
+    return listener(highResTimeStamp);
+  });
   request = requestAnimationFrame(rafLoop);
 }
 
@@ -27,11 +29,13 @@ function deactivate() {
 function animationFrames(start, sink) {
   if (start !== START) return;
 
-  let listener = gamepads => sink(DATA, gamepads);
+  let listener = function(gamepads) {
+    return sink(DATA, gamepads);
+  };
 
   listeners.push(listener);
 
-  const talkback = (type, d) => {
+  const talkback = function(type, d) {
     if (type === TERMINATE) {
       listeners.splice(array.indexOf(listener), 1);
       if (listeners.length === 0) {
@@ -45,4 +49,6 @@ function animationFrames(start, sink) {
   activate();
 }
 
-module.exports = (start, sink) => animationFrames(start, sink);
+module.exports = function(start, sink) {
+  return animationFrames(start, sink);
+};
