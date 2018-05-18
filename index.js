@@ -37,7 +37,7 @@ function animationFrames(start, sink) {
 
   var talkback = function(type, d) {
     if (type === TERMINATE) {
-      listeners.splice(array.indexOf(listener), 1);
+      listeners.splice(listeners.indexOf(listener), 1);
       if (listeners.length === 0) {
         deactivate();
       }
