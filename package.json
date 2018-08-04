@@ -4,7 +4,7 @@
   "version": "1.0.4",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel exmple.html"
+    "dev": "parcel example/example.html -d example/dist"
   },
   "repository": "https://github.com/aaronshaf/callbag-animation-frames.git",
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
@@ -14,6 +14,7 @@
     "callbag-flatten": "^1.0.0",
     "callbag-for-each": "^1.0.0",
     "callbag-pipe": "^1.1.0",
-    "parcel-bundler": "^1.5.1"
-  }
+    "parcel-bundler": "^1.9.7"
+  },
+  "dependencies": {}
 }
