@@ -49,6 +49,6 @@ function animationFrames(start, sink) {
   activate();
 }
 
-module.exports = function(start, sink) {
+export default function(start, sink) {
   return animationFrames(start, sink);
 };

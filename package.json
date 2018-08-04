@@ -2,9 +2,12 @@
   "name": "callbag-animation-frames",
   "description": "Callbag listenable source sending DOMHighResTimeStamp at display refresh rate",
   "version": "1.0.4",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "index.js",
   "scripts": {
-    "dev": "parcel example/example.html -d example/dist"
+    "dev": "parcel example/example.html -d example/dist",
+    "build": "rollup $npm_package_module -o $npm_package_main --f cjs",
+    "prepare": "npm run build"
   },
   "repository": "https://github.com/aaronshaf/callbag-animation-frames.git",
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
@@ -14,7 +17,8 @@
     "callbag-flatten": "^1.0.0",
     "callbag-for-each": "^1.0.0",
     "callbag-pipe": "^1.1.0",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.9.7",
+    "rollup": "^0.63.5"
   },
   "dependencies": {}
 }
