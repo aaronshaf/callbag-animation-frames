@@ -6,7 +6,7 @@
   "module": "index.js",
   "scripts": {
     "dev": "parcel example/example.html -d example/dist",
-    "build": "rollup $npm_package_module -o $npm_package_main --f cjs",
+    "build": "rollup $npm_package_module -o $npm_package_main --f cjs --external callbag-share --no-interop",
     "prepare": "npm run build"
   },
   "repository": "https://github.com/aaronshaf/callbag-animation-frames.git",
@@ -14,11 +14,12 @@
   "license": "MIT",
   "devDependencies": {
     "callbag-filter": "^1.0.0",
-    "callbag-flatten": "^1.0.0",
     "callbag-for-each": "^1.0.0",
     "callbag-pipe": "^1.1.0",
     "parcel-bundler": "^1.9.7",
     "rollup": "^0.63.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "callbag-share": "^1.1.1"
+  }
 }

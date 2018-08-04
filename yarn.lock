@@ -854,10 +854,6 @@ callbag-filter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/callbag-filter/-/callbag-filter-1.0.0.tgz#b20a8b462d8b884fd87605a71d6ec185e26b4c04"
 
-callbag-flatten@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/callbag-flatten/-/callbag-flatten-1.0.0.tgz#d9f85adab0fb7f79084f5d6e42cd9e5f5bd0979a"
-
 callbag-for-each@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/callbag-for-each/-/callbag-for-each-1.0.0.tgz#c306418cfcb2c0dbfbee49f2f0490932d03b5890"
@@ -865,6 +861,10 @@ callbag-for-each@^1.0.0:
 callbag-pipe@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/callbag-pipe/-/callbag-pipe-1.1.0.tgz#2a95383d0e7d4d1ddd9879a042476af79da1dc07"
+
+callbag-share@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/callbag-share/-/callbag-share-1.1.1.tgz#25109b01fc591629c18a142771be813df3cf9268"
 
 caniuse-api@^1.5.2:
   version "1.6.1"
