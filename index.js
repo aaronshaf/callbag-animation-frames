@@ -1,54 +1,21 @@
-var START = 0;
-var DATA = 1;
-var TERMINATE = 2;
+import share from 'callbag-share';
 
-var request;
+export default /* #__PURE__ */ share(function (start, sink) {
+  if (start !== 0) return;
+  var id;
 
-var isActivated = false;
+  function nextCb(ms) {
+    sink(1, ms);
+    next();
+  }
 
-var listeners = [];
+  function next() {
+    id = requestAnimationFrame(nextCb);
+  }
 
-function rafLoop(highResTimeStamp /* DOMHighResTimeStamp */) {
-  listeners.forEach(function(listener) {
-    return listener(highResTimeStamp);
+  next();
+
+  sink(0, function (t) {
+    if (t === 2) cancelAnimationFrame(id);
   });
-  request = requestAnimationFrame(rafLoop);
-}
-
-function activate() {
-  if (isActivated) return;
-  isActivated = true;
-  request = requestAnimationFrame(rafLoop);
-}
-
-function deactivate() {
-  isActivated = false;
-  window.cancelAnimationFrame(request);
-}
-
-function animationFrames(start, sink) {
-  if (start !== START) return;
-
-  var listener = function(gamepads) {
-    return sink(DATA, gamepads);
-  };
-
-  listeners.push(listener);
-
-  var talkback = function(type, d) {
-    if (type === TERMINATE) {
-      listeners.splice(array.indexOf(listener), 1);
-      if (listeners.length === 0) {
-        deactivate();
-      }
-    }
-  };
-
-  sink(START, talkback);
-
-  activate();
-}
-
-module.exports = function(start, sink) {
-  return animationFrames(start, sink);
-};
+});

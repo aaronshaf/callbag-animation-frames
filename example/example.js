@@ -1,6 +1,6 @@
-const pipe = require("callbag-pipe");
-const forEach = require("callbag-for-each");
-const animationFrames = require("./index.js");
+import pipe from "callbag-pipe";
+import forEach from "callbag-for-each";
+import animationFrames from "..";
 
 const debug = document.querySelector("#debug");
 
