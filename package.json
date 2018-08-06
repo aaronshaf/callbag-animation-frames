@@ -1,7 +1,7 @@
 {
   "name": "callbag-animation-frames",
   "description": "Callbag listenable source sending DOMHighResTimeStamp at display refresh rate",
-  "version": "2.0.0-0",
+  "version": "2.0.0",
   "main": "dist/index.cjs.js",
   "module": "index.js",
   "scripts": {
