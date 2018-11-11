@@ -4,6 +4,7 @@
   "version": "2.0.0",
   "main": "./dist/callbag-animation-frames.cjs.js",
   "module": "./dist/callbag-animation-frames.esm.js",
+  "files": ["dist"],
   "scripts": {
     "dev": "parcel example/example.html -d example/dist",
     "build": "rollup -c",
