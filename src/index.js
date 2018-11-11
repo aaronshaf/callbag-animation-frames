@@ -5,8 +5,8 @@ export default share((start, sink) => {
   let id;
 
   function nextCb(ms) {
-    sink(1, ms);
     next();
+    sink(1, ms);
   }
 
   function next() {
