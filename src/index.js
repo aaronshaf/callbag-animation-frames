@@ -1,6 +1,6 @@
 import share from 'callbag-share';
 
-export default /* #__PURE__ */ share(function (start, sink) {
+export default share(function (start, sink) {
   if (start !== 0) return;
   var id;
 
