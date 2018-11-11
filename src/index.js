@@ -1,8 +1,8 @@
 import share from 'callbag-share';
 
-export default share(function (start, sink) {
+export default share((start, sink) => {
   if (start !== 0) return;
-  var id;
+  let id;
 
   function nextCb(ms) {
     sink(1, ms);
@@ -15,7 +15,7 @@ export default share(function (start, sink) {
 
   next();
 
-  sink(0, function (t) {
+  sink(0, t => {
     if (t === 2) cancelAnimationFrame(id);
   });
 });
